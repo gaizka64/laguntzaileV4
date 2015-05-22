@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Lot" table="lot">
+    <indexes>
+      <index name="lot_date_de_creation_idx" columns="date_de_creation"/>
+      <index name="lot_traite_idx" columns="traite"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="titre" type="string" column="titre" nullable="false"/>
+    <field name="dateDeCreation" type="datetime" column="date_de_creation" nullable="false"/>
+    <field name="cle" type="integer" column="cle" nullable="false"/>
+    <field name="traite" type="boolean" column="traite" nullable="false"/>
+    <field name="modele" type="string" column="modele" nullable="true"/>
+    <field name="expediteur" type="string" column="expediteur" nullable="true"/>
+    <many-to-many field="idAffectation" target-entity="Affectation" inversed-by="idLot">
+      <join-table name="lot_affectation">
+        <join-columns>
+          <join-column name="id_lot" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_affectation" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idPersonne" target-entity="Personne" inversed-by="idLot">
+      <join-table name="lot_personne">
+        <join-columns>
+          <join-column name="id_lot" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_personne" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

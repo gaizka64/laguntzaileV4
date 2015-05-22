@@ -1,0 +1,42 @@
+html
+{
+    font-size: 1.2em;
+}
+.pourBougerBouton
+{
+ float : right;   
+}
+
+.centrer
+{
+ text-align: center;
+}
+.largeurMax
+{
+ width=100%;   
+}
+.gauche
+{
+ float: left;   
+}
+.droite
+{
+ float: right;   
+}
+body
+{
+ background-image: url(../images/fond.jpg); 
+}
+
+.contournerPbWidth
+{
+    margin-left: 10%;
+    width: 65%;
+    float: left;
+    display: inline-block;
+}
+
+table td .nomDuPoste
+{
+    height: 65px;
+}
