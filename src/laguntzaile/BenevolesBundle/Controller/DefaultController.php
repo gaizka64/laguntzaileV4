@@ -222,7 +222,7 @@ class DefaultController extends Controller
             {
                 $formulaire
                     ->add('radio' . $affectationCourante->getId(),'choice', array(
-                                'choices' => array('Acceptee' => ' Accepter', 'Refusee' => ' Refuser '),
+                                'choices' => array("Acceptee","Refusee"),
                                 'preferred_choices' => array('Acceptee'),
                                 'expanded' => true,
                                 'multiple' => false,
@@ -264,7 +264,7 @@ class DefaultController extends Controller
                     
                     foreach ($tabAffectations as $affectationCourante)
                     {
-                        if ($formulaireAffectation->getData()["radio" . $affectationCourante->getId()] == "Acceptee")
+                        if ($formulaireAffectation->getData()["radio" . $affectationCourante->getId()] == 0) // Acceptee
                         {
 
                             $affectationCourante->setStatut("acceptee");
@@ -274,7 +274,7 @@ class DefaultController extends Controller
 
                         }
 
-                        else if ($formulaireAffectation->getData()["radio" . $affectationCourante->getId()] == "Refusee")
+                        else if ($formulaireAffectation->getData()["radio" . $affectationCourante->getId()] == 1) // Refuse
                         {
                             $affectationCourante->setStatut("rejetee");
                             $commentaire = $formulaireAffectation->getData()["commentaire" . $affectationCourante->getId()];
@@ -322,5 +322,12 @@ class DefaultController extends Controller
                     'valeurCryptee'=> $valeurCryptee,
                     'trucACrypter'=> $trucACrypter));
         
+    }
+    
+    public function traductionAction($name)
+    {
+        return $this->render('laguntzaileBenevolesBundle:Default:translation.html.twig', array(
+      'name' => $name
+    )); 
     }
 }

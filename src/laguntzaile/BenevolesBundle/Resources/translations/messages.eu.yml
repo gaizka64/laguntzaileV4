@@ -1,0 +1,63 @@
+# Termes associés à la vue n°2
+'Voici l''affectation que vous avez déjà traité :': '__Voici l''affectation que vous avez déjà traité :'
+'Voici la liste des affectations que vous avez déjà traité :': '__Voici la liste des affectations que vous avez déjà traité :'
+Poste: __Poste
+Tour: __Tour
+Choix: __Choix
+Le: __Le
+de: __de
+à: __à
+De: __De
+Acceptée: __Acceptée
+Refusée: __Refusée
+'Aucune propositions d''affectation pour l''instant.': '__Aucune propositions d''affectation pour l''instant.'
+'Voici l''affectation qui vous est proposée :': '__Voici l''affectation qui vous est proposée :'
+'Voici la liste des affectations qui vous sont proposées :': '__Voici la liste des affectations qui vous sont proposées :'
+'Envoyer !': '__Envoyer !'
+
+# Termes associés à la vue n°1
+'Inscription bénévole pour lévénement': LOL
+'A propos de vous': '__A propos de vous'
+'Pour vous contacter': '__Pour vous contacter'
+'Code Postal': '__Code Postal'
+Commune: __Commune
+'Pour en savoir plus sur vous': '__Pour en savoir plus sur vous'
+#Le "<br />" c'est normal, il faut le laisser
+'Spécifiquement <br /> pour cet événement': '__Spécifiquement <br /> pour cet événement'
+'Etre bénévole pour l''événement': '__Etre bénévole pour l''événement'
+'Candidature envoyée.': '__Candidature envoyée.'
+Bonjour: __Bonjour
+'Inscription bénévole pour l''événement': '__Inscription bénévole pour l''événement'
+Acceptee: Acceptatzen
+Refusee: Refuzatzen
+Nom: __
+Prénom: __
+'Adresse Postale': __
+'Adresse de courriel': __
+'N° de portable': __
+'N° du domicile': __
+'Date de naissance': __
+'Compétences': __
+'Profession': __
+'Compétences': __
+'Langues parlées': __
+'Disponibilités': __
+'Affinités': __ __
+'Type de poste': __
+'Remarques et commentaires': __
+
+#Ici les messages d'erreur de formulaire de la vue n°1
+'Les disponibilités doivent être spécifiées.': __
+'Le nom doit être spécifié.': __
+'Le nom doit être composé (uniquement) de lettres.': __
+'Le prénom doit être composé (uniquement) de lettres.': __
+'Code postal incorrect.': __
+'La commune doit être spécifiée.': __
+'La commune doit être composée (uniquement) de lettres.': __
+'Le numéro de portable doit être composé d''au moins 10 chiffres.': __
+'Veuillez saisir une adresse de courriel valide.': __
+'Une adresse de courriel doit être spécifiée.': __
+'La profession doit être composée des lettres.': __
+'Les compétences doivent être composées de lettres.': __
+'Les langues parlées doivent être composées de lettres.': __
+'Ce champ doit être composé de lettres.': __

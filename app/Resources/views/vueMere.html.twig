@@ -12,37 +12,25 @@
     
         {% endblock %}
     </head>
-    <body>
-        <div class="container">
-            <!-- Ligne 1 --> 
-{#             <div class="row"> #}
-{#                 <div class="col-xs-12" style="background: #089635; z-index: 1"> #}
-{#                     {% block header %}#}
-{#                     <center>#}
-{#                         <img class="displayed" src="{{ asset('images/bandeau.png') }}"/>#}
-{#                     </center> #}
-{#                    {% endblock %}#}
-{#                 </div> #}
-{#            </div> #}    
-        </div>
-        
-        <div id="corp" class="container">
+    <body>        
+
             <!-- Ligne 2 --> 
+
+                    {% block bandeau %}
+                    {% endblock %}
+        
             <div class="row">
-                <div class="col-md-2"></div>
-                {% block central %}
-                <div id="section" class="col-md-8">
-                    {% block contenuCentral %}
-                    {% endblock %}     
-                </div>
-                {% endblock %}
+
+                {% block contenuCentral %}
+                {% endblock %}     
+                {#</div>#}
             </div>
-        </div>
+
     
         <div class="container">
             <!-- Ligne 3 --> 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                     {% block footer %}
                     {% endblock %}
                 </div>

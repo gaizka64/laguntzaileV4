@@ -1,222 +1,342 @@
 {% extends "::vueMere.html.twig" %}
-{% block title %}Inscription bénévole pour l'événement {{evenement.nom}}{% endblock %}
+
+{% block title %}
+{% trans %}Inscription bénévole pour lévénement{% endtrans %}
+{{evenement.nom}}
+{% endblock %}
+
+{% block bandeau %}
+<div class="bandeau">
+    <div class="panel panel-default">
+        <h4 class="centrer">
+            {% trans %}Inscription bénévole pour l'événement{% endtrans %} {{evenement.nom}}{% include "laguntzaileBenevolesBundle:Default:langue.html.twig" %}
+        </h4>
+    </div>
+</div>
+{% endblock %}
+
 {% block contenuCentral %}
-<div class="panel panel-default">
-    <h4 class="centrer">Inscription bénévole pour l'événement {{evenement.nom}}</h4>   
+
+<div class="blockCentral">
+
     <form method="post" novalidate="novalidate" {{form_enctype(formulaireInscription) }}> 
-        <div id="colone1" class="col-md-7">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th class="centrer" colspan="2"><h4><br/>A propos de vous <br/></h4></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>                            
-                            {{ form_label(formulaireInscription.idPersonne.nom) }}
-                            <br />                       
-                            {{ form_widget(formulaireInscription.idPersonne.nom) }}
-                        </td>
-                        <td> 
-                            {{ form_label(formulaireInscription.idPersonne.prenom) }}
-                            <br />
-                            {{ form_widget(formulaireInscription.idPersonne.prenom) }}
-                        </td>
-                    </tr>
-                    {% if form_errors(formulaireInscription.idPersonne.nom) != '' %}
-                    <tr>
-                        <td colspan="2">
-                            {{ form_errors(formulaireInscription.idPersonne.nom) }}
-                            {{ form_errors(formulaireInscription.idPersonne.prenom) }}
-                        </td>
-                    </tr>
-                    {% endif %}
-                    <tr>
-                        <td class="centrer" colspan="2">
-                            <strong>Pour vous contacter</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            {{ form_label(formulaireInscription.idPersonne.adresse) }}
-                            <br />
+
+        <div class="blockGauche">
+            <br/>
+            <h4 class="centrer">{% trans %}A propos de vous{% endtrans %}</h4>
+            <hr />
+
+
+            <div class="prenom">
+                <div class="labelPrenom">
+                    {{ form_label(formulaireInscription.idPersonne.prenom) }}
+                </div>
+
+                <div class="widgetPrenom">
+                    {{ form_widget(formulaireInscription.idPersonne.prenom) }}
+                </div>
+            </div>
+            
+            <div class="nom">
+                <div class="widgetNom">
+                    {{ form_widget(formulaireInscription.idPersonne.nom) }}
+                </div>
+
+                <div class="labelNom">
+                    {{ form_label(formulaireInscription.idPersonne.nom) }}
+                </div>
+
+            </div>
+            <br />
+            <br />
+            <br />
+            {% if form_errors(formulaireInscription.idPersonne.nom) != '' or form_errors(formulaireInscription.idPersonne.prenom) != '' %}
+            <div class="messageDerreur">
+                
+                {% if form_errors(formulaireInscription.idPersonne.nom) != '' %}
+                {{ form_errors(formulaireInscription.idPersonne.nom) }}
+                {% endif %}    
+                {% if form_errors(formulaireInscription.idPersonne.prenom) != '' %}
+                {{ form_errors(formulaireInscription.idPersonne.prenom) }}  
+                {% endif %}
+
+                <hr />
+            
+            </div>
+            {% endif %}
+            <div class="centrer">
+                <strong>{% trans %}Pour vous contacter{% endtrans %}</strong>
+            </div>
+            <hr />
+            <div class="sousBlock">
+                <div class="sousBlockGauche">
+                    <div class="droite">
+                        {{ form_label(formulaireInscription.idPersonne.adresse) }}
+                        <br />
+                        <div class="monWidget">
                             {{ form_widget(formulaireInscription.idPersonne.adresse) }}
-                            <br />
-                            <span class="gauche">
-                                <h6>Code Postal</h6>
-                                {{ form_widget(formulaireInscription.idPersonne.codePostal,
-                                { 'attr': {'maxlength' : '5', 'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_ville',this.maxLength, this.value)"} }) }} 
-                                &nbsp &nbsp &nbsp
-                            </span>
-                            <h6>Commune</h6>
+                        </div>
+
+                        <br/>
+
+                        <div class="inlineBlock">
+                            <p>{% trans %}Code Postal{% endtrans %}</p>
+                            {{ form_widget(formulaireInscription.idPersonne.codePostal,
+                            { 'attr': {'maxlength' : '5', 'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_ville',this.maxLength, this.value)"} }) }}           </div>
+                        &nbsp; &nbsp;
+                        <div class="inlineBlock">
+                            <p>{% trans %}Commune{% endtrans %}</p>
                             {{ form_widget(formulaireInscription.idPersonne.ville) }}
-                        </td>
-                        <td>
-                            {{form_label(formulaireInscription.idPersonne.email) }}    
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="sousBlockDroite">
+                    <div class="gauche">
+                        <div class="labelLong">
+                            {{form_label(formulaireInscription.idPersonne.email) }}
+                        </div>
+
+                        <div class="monWidget">
                             {{form_widget(formulaireInscription.idPersonne.email) }}
+                        </div>
+
+                        <br />
+
+                        <div class="labelLong">
                             {{ form_label(formulaireInscription.idPersonne.portable) }}
+                        </div>
+
+                        <div class="monWidget">
                             {{ form_widget(formulaireInscription.idPersonne.portable,
                             { 'attr': {'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_domicile',10, this.value)"} }) }}
+                        </div>
+
+                        <br />
+
+                        <div class="labelLong">
                             {{ form_label(formulaireInscription.idPersonne.domicile) }}
+                        </div>
+
+                        <div class="monWidget">
                             {{ form_widget(formulaireInscription.idPersonne.domicile,
                             { 'attr': {'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_profession',10, this.value)"} }) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        </td>
-                    </tr>
-                    {% if 
-                    form_errors(formulaireInscription.idPersonne.adresse) != '' 
-                    or form_errors(formulaireInscription.idPersonne.codePostal) != '' 
-                    or form_errors(formulaireInscription.idPersonne.ville) != '' 
-                    or form_errors(formulaireInscription.idPersonne.email) != '' 
-                    or form_errors(formulaireInscription.idPersonne.portable) != '' 
-                    or form_errors(formulaireInscription.idPersonne.domicile) != '' %}
-                </tr>
-            <td colspan="2">
-                {% if form_errors(formulaireInscription.idPersonne.adresse) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.adresse)}}
-                {% endif %}
-                
-
-                {% if form_errors(formulaireInscription.idPersonne.codePostal) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.codePostal)}}
-                {% endif %}
-
-                {% if form_errors(formulaireInscription.idPersonne.ville) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.ville)}}
-                {% endif %}
-
-                {% if form_errors(formulaireInscription.idPersonne.email) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.email)}}
-                {% endif %}
-
-                {% if form_errors(formulaireInscription.idPersonne.portable) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.portable)}}
-                {% endif %}
-
-                {% if form_errors(formulaireInscription.idPersonne.domicile) != '' %}
-                {{form_errors(formulaireInscription.idPersonne.domicile)}}
-                {% endif %}
-
-            </td>
-            </tr>
-        {% endif %}
-        <tr>
-            <td class="centrer" colspan="2"><strong>Pour en savoir plus sur vous</strong></td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.idPersonne.profession) }}
-                <br />
-                {{ form_widget(formulaireInscription.idPersonne.profession) }}
-                {{ form_errors(formulaireInscription.idPersonne.profession) }}
-            </td>
-                 
-            <td>
-                {{ form_label(formulaireInscription.idPersonne.dateNaissance) }}
-                <br />
-                {{ form_widget(formulaireInscription.idPersonne.dateNaissance.day,
-                { 'attr': {'size' : '2', 'maxlength' : '2', 'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_dateNaissance_month',this.maxLength, this.value)"} })   }}
-                /
-                {{ form_widget(formulaireInscription.idPersonne.dateNaissance.month,
-                { 'attr': {'size' : '2', 'maxlength' : '2','onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_dateNaissance_year',this.maxLength, this.value)" } })  }}
-                /
-                {{ form_widget(formulaireInscription.idPersonne.dateNaissance.year,
-                { 'attr': {'size' : '4','maxlength' : '4','onKeyUp' :
-                "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_competences',this.maxLength,this.value)"} })   }}
-                {{ form_errors(formulaireInscription.idPersonne.dateNaissance) }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.idPersonne.competences) }}    
-                <br />
-                {{ form_widget(formulaireInscription.idPersonne.competences) }}
-                {{ form_errors(formulaireInscription.idPersonne.competences) }}
-            </td>
-            <td>
-                {{ form_label(formulaireInscription.idPersonne.langues) }} 
-                <br />
-                {{ form_widget(formulaireInscription.idPersonne.langues) }}
-                {{ form_errors(formulaireInscription.idPersonne.langues) }}
-            </td>
-        </tr>
-
-        <tr>
-            <td width="10%">
-                {{ form_label(formulaireInscription.idPersonne.commentaire) }}
-            </td>
-            <td>
-                {{ form_widget(formulaireInscription.idPersonne.commentaire) }}
-                {{ form_errors(formulaireInscription.idPersonne.commentaire) }}
-            </td>
-
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-
-<div id="colone2" class="col-md-5">
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="centrer"><h4>Spécifiquement <br /> pour cet événement</th></h4>
-            </tr>
-        </thead>
-    <tbody>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.joursEtHeuresDispo) }}
-                <br />
-                {{ form_widget(formulaireInscription.joursEtHeuresDispo) }}     
-                
-            </td>
-            {% if form_errors(formulaireInscription.joursEtHeuresDispo) != '' %}
-                <tr>
-                    <td colspan="2">
-                        {{ form_errors(formulaireInscription.joursEtHeuresDispo) }}
-                    </td>
-                </tr>
+            {% if 
+            form_errors(formulaireInscription.idPersonne.adresse) != '' 
+            or form_errors(formulaireInscription.idPersonne.codePostal) != '' 
+            or form_errors(formulaireInscription.idPersonne.ville) != '' 
+            or form_errors(formulaireInscription.idPersonne.email) != '' 
+            or form_errors(formulaireInscription.idPersonne.portable) != '' 
+            or form_errors(formulaireInscription.idPersonne.domicile) != '' %}
+            <div class="messageDerreur">
+            
+            {% if form_errors(formulaireInscription.idPersonne.adresse) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.adresse)}}
             {% endif %}
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.listeAmis) }}
-                <br />
-                {{ form_errors(formulaireInscription.listeAmis) }}
-                {{ form_widget(formulaireInscription.listeAmis) }}    
-            </td>   
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.typePoste)  }}
-                <br /> 
-                {{ form_errors(formulaireInscription.typePoste) }}
-                {{ form_widget(formulaireInscription.typePoste) }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form_label(formulaireInscription.commentaire) }}
-                <br />
-                {{ form_errors(formulaireInscription.commentaire) }}
-                {{ form_widget(formulaireInscription.commentaire) }} 
-            </td>
-        </tr>
-        <tr>
-            <td>
 
-                {{ form_rest(formulaireInscription) }}
-                <span class="pourBougerBouton">
-                    <input type="submit" class="btn btn-primary" value="Envoyer !"/>
-                </span>
-            </td>
-        </tr>
-    </tbody>
-    </table>
-</form>
-</div>
+
+            {% if form_errors(formulaireInscription.idPersonne.codePostal) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.codePostal)}}
+            {% endif %}
+
+            {% if form_errors(formulaireInscription.idPersonne.ville) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.ville)}}
+            {% endif %}
+
+            {% if form_errors(formulaireInscription.idPersonne.email) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.email)}}
+            {% endif %}
+
+            {% if form_errors(formulaireInscription.idPersonne.portable) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.portable)}}
+            {% endif %}
+
+            {% if form_errors(formulaireInscription.idPersonne.domicile) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.domicile)}}
+            {% endif %}
+            <hr />
+            </div>
+            {% endif %}
+            <div class="sousBlock">
+            <div class=centrer>    
+                <strong>{% trans %}Pour en savoir plus sur vous{% endtrans %}</strong>
+            </div>
+
+            <hr />
+            
+                <div class="sousBlockGauche">
+                    <div class="droite">
+                        {{ form_label(formulaireInscription.idPersonne.dateNaissance) }}
+
+
+                        <br/>
+
+
+                        {{ form_widget( formulaireInscription.idPersonne.dateNaissance.day,
+                        { 'attr': {'size' : '2', 'maxlength' : '2', 'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_dateNaissance_month',this.maxLength, this.value)"} })   }}
+                        /
+                        {{ form_widget(formulaireInscription.idPersonne.dateNaissance.month,
+                        { 'attr': {'size' : '2', 'maxlength' : '2','onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_dateNaissance_year',this.maxLength, this.value)" } })  }}
+                        /
+                        {{ form_widget(formulaireInscription.idPersonne.dateNaissance.year,
+                        { 'attr': {'size' : '4','maxlength' : '4','onKeyUp' :
+                        "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_competences',this.maxLength,this.value)"} })   }}
+                        {{ form_errors(formulaireInscription.idPersonne.dateNaissance) }}
+
+
+                        <br />
+
+
+                        {{ form_label(formulaireInscription.idPersonne.competences) }}    
+
+
+                        <br />
+
+
+                        {{ form_widget(formulaireInscription.idPersonne.competences) }}
+                        {{ form_errors(formulaireInscription.idPersonne.competences) }}
+
+
+
+                    </div>
+                </div>
+
+                <div class="sousBlockDroite">
+                    <div class="gauche">
+
+                        {{ form_label(formulaireInscription.idPersonne.profession) }}
+
+                        <br/>
+
+
+                        {{ form_widget(formulaireInscription.idPersonne.profession) }}
+                        {{ form_errors(formulaireInscription.idPersonne.profession) }}
+
+                        <br />
+
+
+                        {{ form_label(formulaireInscription.idPersonne.langues) }} 
+
+
+                        <br />
+
+
+                        {{ form_widget(formulaireInscription.idPersonne.langues) }}
+
+                        {{ form_errors(formulaireInscription.idPersonne.langues) }}
+
+
+
+                    </div>
+                </div>
+                 </div>
+                <div class="aPropos">
+                    <br/>
+                    {{ form_label(formulaireInscription.idPersonne.commentaire) }}
+                    <br />
+                    {{ form_widget(formulaireInscription.idPersonne.commentaire) }}
+                    {{ form_errors(formulaireInscription.idPersonne.commentaire) }}
+                </div>
+            {% if form_errors(formulaireInscription.idPersonne.dateNaissance) != '' or
+            form_errors(formulaireInscription.idPersonne.profession) != '' or
+            form_errors(formulaireInscription.idPersonne.competences) != '' or
+            form_errors(formulaireInscription.idPersonne.langues) != '' or
+            form_errors(formulaireInscription.idPersonne.commentaire) != '' %}
+            
+                <div class="messageDerreur">
+            
+            {% if form_errors(formulaireInscription.idPersonne.dateNaissance) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.dateNaissance)}}
+            {% endif %}
+            
+            {% if form_errors(formulaireInscription.idPersonne.profession) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.profession)}}
+            {% endif %}
+            
+            {% if form_errors(formulaireInscription.idPersonne.competences) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.competences)}}
+            {% endif %}
+                    
+            {% if form_errors(formulaireInscription.idPersonne.langues) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.langues)}}
+            {% endif %}
+                    
+            {% if form_errors(formulaireInscription.idPersonne.commentaire) != '' %}
+            {{form_errors(formulaireInscription.idPersonne.commentaire)}}
+            {% endif %}
+                    
+            <hr />
+            </div>
+            {% endif %}
+           
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="blockDroite">
+            <div class="titreBlockDroite">
+                <h4>{% trans %}Spécifiquement <br /> pour cet événement{% endtrans %}</h4>
+            </div>
+            <hr />
+            {{ form_label(formulaireInscription.joursEtHeuresDispo) }}
+            <br />
+            {{ form_widget(formulaireInscription.joursEtHeuresDispo) }}     
+            <br />
+            {% if form_errors(formulaireInscription.joursEtHeuresDispo) != '' %}
+
+            {{ form_errors(formulaireInscription.joursEtHeuresDispo) }}
+            <br />
+            {% endif %}
+
+
+
+            {{ form_label(formulaireInscription.listeAmis) }}
+            <br />
+            {{ form_errors(formulaireInscription.listeAmis) }}
+            {{ form_widget(formulaireInscription.listeAmis) }}    
+
+            <br />
+
+
+            {{ form_label(formulaireInscription.typePoste)  }}
+            <br /> 
+            {{ form_errors(formulaireInscription.typePoste) }}
+            {{ form_widget(formulaireInscription.typePoste) }}
+
+            <br />
+
+
+            {{ form_label(formulaireInscription.commentaire) }}
+            <br />
+            {{ form_errors(formulaireInscription.commentaire) }}
+            {{ form_widget(formulaireInscription.commentaire) }} 
+
+
+            {{ form_rest(formulaireInscription) }}
+            <br />
+            <br />
+            <span class="pourBougerBouton">
+                <input type="submit" class="btn btn-primary" value="{% trans %}Envoyer !{% endtrans %}"/>
+            </span>
+            </form>
+        </div>
 </div>
 
 <script>

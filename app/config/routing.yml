@@ -1,7 +1,8 @@
 laguntzaile_benevoles:
     resource: "@laguntzaileBenevolesBundle/Resources/config/routing.yml"
-    prefix:   /
-
+    prefix:   /{_locale}
+    requirements:
+        _locale: fr|eu
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
