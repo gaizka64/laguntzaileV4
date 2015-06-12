@@ -148,14 +148,6 @@ class DefaultController extends Controller
 
 
 
-
-
-    
-    public function erreurAction()
-    {
-        return $this->render('laguntzaileBenevolesBundle:Default:erreur.html.twig');
-    }
-
     public function cryptageMaison($chaineACrypter,$clePrivee)
     {
         

@@ -13,7 +13,8 @@ Refusée: __Refusée
 'Voici l''affectation qui vous est proposée :': '__Voici l''affectation qui vous est proposée :'
 'Voici la liste des affectations qui vous sont proposées :': '__Voici la liste des affectations qui vous sont proposées :'
 'Envoyer !': '__Envoyer !'
-'Inscription bénévole pour lévénement': 'LOL'
+'Inscription bénévole pour lévénement': '__Inscription bénévole pour lévénement'
+'Inscription bénévole pour l''événement': '__Inscription bénévole pour l''événement'
 'A propos de vous': '__A propos de vous'
 'Pour vous contacter': '__Pour vous contacter'
 'Code Postal': '__Code Postal'
@@ -22,4 +23,3 @@ Commune: __Commune
 'Spécifiquement <br /> pour cet événement': '__Spécifiquement <br /> pour cet événement'
 'Etre bénévole pour l''événement': '__Etre bénévole pour l''événement'
 'Candidature envoyée.': '__Candidature envoyée.'
-Bonjour: __Bonjour

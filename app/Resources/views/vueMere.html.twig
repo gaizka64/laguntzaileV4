@@ -4,43 +4,22 @@
         <meta charset="UTF-8" />
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
-        {% stylesheets 'laguntzaile/web/css/style.css' %}
-        <link href="{{ asset('css/style2.css') }}" rel="stylesheet" />
-        {% endstylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/Bootstrap.css') }}" type="text/css" />
-        {#<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />#}
-    
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+            <link rel="stylesheet" href="{{ asset('css/Bootstrap.css') }}" type="text/css" />
         {% endblock %}
     </head>
     <body>        
-
-            <!-- Ligne 2 --> 
-
-                    {% block bandeau %}
-                    {% endblock %}
-        
-            <div class="row">
-
-                {% block contenuCentral %}
-                {% endblock %}     
-                {#</div>#}
-            </div>
-
-    
-        <div class="container">
-            <!-- Ligne 3 --> 
-            <div class="row">
-                <div class="col-sm-12">
-                    {% block footer %}
-                    {% endblock %}
-                </div>
-            </div>
+        {% block bandeau %}
+        {% endblock %}
+        <div class="row">
+            {% block contenuCentral %}
+            {% endblock %}     
         </div>
-
-        <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery-dropdown.js') }}" ></script>
-        <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
     </body>
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-dropdown.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/scriptPageAffectations.js') }}"></script>
 </html>
 
 

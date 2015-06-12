@@ -1,63 +1,68 @@
-# Termes associés à la vue n°2
-'Voici l''affectation que vous avez déjà traité :': '__Voici l''affectation que vous avez déjà traité :'
-'Voici la liste des affectations que vous avez déjà traité :': '__Voici la liste des affectations que vous avez déjà traité :'
-Poste: __Poste
-Tour: __Tour
-Choix: __Choix
-Le: __Le
-de: __de
-à: __à
-De: __De
-Acceptée: __Acceptée
-Refusée: __Refusée
-'Aucune propositions d''affectation pour l''instant.': '__Aucune propositions d''affectation pour l''instant.'
-'Voici l''affectation qui vous est proposée :': '__Voici l''affectation qui vous est proposée :'
-'Voici la liste des affectations qui vous sont proposées :': '__Voici la liste des affectations qui vous sont proposées :'
-'Envoyer !': '__Envoyer !'
-
 # Termes associés à la vue n°1
-'Inscription bénévole pour lévénement': LOL
-'A propos de vous': '__A propos de vous'
-'Pour vous contacter': '__Pour vous contacter'
-'Code Postal': '__Code Postal'
-Commune: __Commune
-'Pour en savoir plus sur vous': '__Pour en savoir plus sur vous'
+'Inscription bénévole pour lévénement': 'Laguntzaile izaiteko izen emaitea'
+'A propos de vous': 'Zure buruari buruz'
+'Pour vous contacter': 'Zurekin harremanetan sartzeko'
+'Code Postal': 'Posta-kodea'
+Commune: Herria
+'Pour en savoir plus sur vous': 'Zure buruari buruz'
 #Le "<br />" c'est normal, il faut le laisser
-'Spécifiquement <br /> pour cet événement': '__Spécifiquement <br /> pour cet événement'
-'Etre bénévole pour l''événement': '__Etre bénévole pour l''événement'
-'Candidature envoyée.': '__Candidature envoyée.'
-Bonjour: __Bonjour
-'Inscription bénévole pour l''événement': '__Inscription bénévole pour l''événement'
-Acceptee: Acceptatzen
-Refusee: Refuzatzen
-Nom: __
-Prénom: __
-'Adresse Postale': __
-'Adresse de courriel': __
-'N° de portable': __
-'N° du domicile': __
-'Date de naissance': __
-'Compétences': __
-'Profession': __
-'Compétences': __
-'Langues parlées': __
-'Disponibilités': __
-'Affinités': __ __
-'Type de poste': __
-'Remarques et commentaires': __
-
-#Ici les messages d'erreur de formulaire de la vue n°1
-'Les disponibilités doivent être spécifiées.': __
-'Le nom doit être spécifié.': __
-'Le nom doit être composé (uniquement) de lettres.': __
-'Le prénom doit être composé (uniquement) de lettres.': __
-'Code postal incorrect.': __
-'La commune doit être spécifiée.': __
-'La commune doit être composée (uniquement) de lettres.': __
-'Le numéro de portable doit être composé d''au moins 10 chiffres.': __
-'Veuillez saisir une adresse de courriel valide.': __
-'Une adresse de courriel doit être spécifiée.': __
-'La profession doit être composée des lettres.': __
-'Les compétences doivent être composées de lettres.': __
-'Les langues parlées doivent être composées de lettres.': __
-'Ce champ doit être composé de lettres.': __
+'Spécifiquement <br /> pour cet événement': 'Ekitaldi hunentzat'
+'Etre bénévole pour l''événement': 'Laguntzaile izan'
+'Candidature envoyée.': 'Izen emaitea igorria'
+Bonjour: 'Egun on'
+'Inscription bénévole pour l''événement': 'Izen emaitea'
+Acceptee: Onartua
+Refusee: Errefusatua
+Nom: Deitura
+Prénom: Izena
+'Adresse Postale': Helbidea
+'Adresse de courriel': 'Helbide elektronikoa'
+'N° de portable': 'Mugikor zenbakia'
+'N° du domicile': 'Etxeko zenbakia'
+'Date de naissance': Sorteguna
+'Compétences': Gaitasunak
+'Profession': Lanbidea
+'Langues parlées': Hizkuntzak
+'Disponibilités': 'Libro ziren egun eta orenak'
+'Affinités': Gustukoak
+'Type de poste': 'postu mota'
+'Remarques et commentaires': Oharrak
+#Phrases dans les champs de formulaire avant que l'utilisateur commence la saisie
+'Jours et heures de vos disponibilités et indisponibilités': 'Libro ziren egun eta orenak'
+'Personnes avec qui vous souhaitez être ou ne pas être': __lol
+'Postes spécifiques auxquels vous aimeriez être affecté': __lol
+'Pour nous aider à vous trouver un poste': __lol
+'ex : français,basque,...': __lol
+'Informations que vous souhaitez communiquer': __lol
+#Messages d'erreur de formulaire de la vue n°1
+'Les disponibilités doivent être spécifiées.': __lol
+'Le nom doit être spécifié.': __lol
+'Le nom doit être composé (uniquement) de lettres.': __lol
+'Le prénom doit être composé (uniquement) de lettres.': __lol
+'Code postal incorrect.': __lol
+'La commune doit être spécifiée.': __lol
+'La commune doit être composée (uniquement) de lettres.': __lol __lol
+'Le numéro de portable doit être composé d''au moins 10 chiffres.': __lol
+'Veuillez saisir une adresse de courriel valide.': __lol
+'Une adresse de courriel doit être spécifiée.': __lol
+'La profession doit être composée des lettres.': __lol
+'Les compétences doivent être composées de lettres.': __lol
+'Les langues parlées doivent être composées de lettres.': __lol
+'Ce champ doit être composé de lettres.': __lol
+# Termes associés à la vue n°2
+'Voici l''affectation que vous avez déjà traité :': __lol
+'Voici la liste des affectations que vous avez déjà traité :': __lol
+Poste: __lol
+Tour: __lol
+Choix: __lol
+Le: __lol
+de: __lol
+à: __lol
+De: __lol
+Acceptée: __lol
+Refusée: __lol
+'Aucune propositions d''affectation pour l''instant.': __lol
+'Voici l''affectation qui vous est proposée :': __lol
+'Voici la liste des affectations qui vous sont proposées :': __lol
+'Envoyer !': __lol
+'Veuillez nous préciser pouquoi vous refusez cette affectation afin que nous vous fassions des propositions plus adaptées.': __lol

@@ -26,27 +26,20 @@
             <h4 class="centrer">{% trans %}A propos de vous{% endtrans %}</h4>
             <hr />
 
-
-            <div class="prenom">
-                <div class="labelPrenom">
-                    {{ form_label(formulaireInscription.idPersonne.prenom) }}
-                </div>
-
-                <div class="widgetPrenom">
-                    {{ form_widget(formulaireInscription.idPersonne.prenom) }}
-                </div>
+            <div class="nom">
+                
+                    {{ form_label(formulaireInscription.idPersonne.nom) }}
+                    &nbsp;
+                    {{ form_widget(formulaireInscription.idPersonne.nom) }}
             </div>
             
-            <div class="nom">
-                <div class="widgetNom">
-                    {{ form_widget(formulaireInscription.idPersonne.nom) }}
-                </div>
-
-                <div class="labelNom">
-                    {{ form_label(formulaireInscription.idPersonne.nom) }}
-                </div>
-
+            <div class="prenom">
+                    {{ form_label(formulaireInscription.idPersonne.prenom) }}
+                    &nbsp;
+                    {{ form_widget(formulaireInscription.idPersonne.prenom) }}
             </div>
+            
+            
             <br />
             <br />
             <br />
@@ -125,7 +118,7 @@
 
                         <div class="monWidget">
                             {{ form_widget(formulaireInscription.idPersonne.domicile,
-                            { 'attr': {'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_profession',10, this.value)"} }) }}
+                            { 'attr': {'onKeyUp' : "Autotab('laguntzaile_benevolesbundle_disponibilite_idPersonne_dateNaissance_day',10, this.value)"} }) }}
                         </div>
                     </div>
                 </div>
